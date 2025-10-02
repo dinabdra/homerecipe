@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+*.pyc
+dist/
+node_modules/
+home-recipe-frontend/node_modules/
+home-recipe-frontend/dist/
+.DS_Store
