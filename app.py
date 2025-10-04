@@ -238,27 +238,6 @@ def generate_recipe_for_user(username):
         return jsonify({"error": str(e)}), 500
 
 
-# --- TEMP ADMIN ROUTES (remove after use) ---
-from sqlalchemy import inspect
-
-@app.route("/__admin/introspect", methods=["GET"])
-def __admin_introspect():
-    try:
-        inspector = inspect(db.engine)
-        tables = inspector.get_table_names()
-        return {"ok": True, "tables": tables}, 200
-    except Exception as e:
-        return {"ok": False, "error": str(e)}, 500
-
-@app.route("/__admin/create_all", methods=["POST"])
-def __admin_create_all():
-    try:
-        db.create_all()
-        return {"ok": True}, 200
-    except Exception as e:
-        return {"ok": False, "error": str(e)}, 500
-# --- END TEMP ADMIN ROUTES ---
-
 
 
 # Start the Flask server
