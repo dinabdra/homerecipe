@@ -16,7 +16,7 @@ Users can:
 ---
 
 ## 🏗️ Architecture Diagram
-![Architecture](architecture1.png)
+![Architecture](architecture.png)
 
 **Flow**
 1. The React frontend sends requests (signup, suggestions, recipe generation) →  
