@@ -9,7 +9,7 @@ export default function App() {
   const [username, setUsername] = useState('');
   const [addedIngredients, setAddedIngredients] = useState([]);
   const backgroundImages = [
-    '/food/banana.jpg',
+    '/food/flower.jpg',
     '/food/burger.jpg',
     '/food/faces.jpg',
   ];
