@@ -7,3 +7,8 @@ node_modules/
 home-recipe-frontend/node_modules/
 home-recipe-frontend/dist/
 .DS_Store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

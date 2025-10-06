@@ -1,3 +1,4 @@
+import config from './config';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './App.css';
@@ -28,7 +29,9 @@ export default function App() {
         return;
       }
       try {
-        const res = await fetch(`http://127.0.0.1:5000/suggest-ingredients?q=${ingredientInput}`);
+        const res = await fetch(
+          `${config.API_BASE_URL}/suggest-ingredients?q=${ingredientInput}`
+        );
         const data = await res.json();
         const flatList = Object.entries(data)
           .flatMap(([category, items]) =>
@@ -50,11 +53,12 @@ export default function App() {
       ingredients: cleanIngredients,
     };
     try {
-      const res = await fetch('http://127.0.0.1:5000/signup', {
+      const res = await fetch(`${config.API_BASE_URL}/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
+      
       const data = await res.json();
       alert(data.message || 'Signup successful');
     } catch (error) {
@@ -84,12 +88,7 @@ export default function App() {
         <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md z-20">
           <h1 className="text-2xl font-bold mb-4">Sign Up</h1>
 
-          <div className="debug-border">
-            <p className="text-red-500">If this text is red, Tailwind is working.</p>
-          </div>
-
-          {/* Tailwind test line */}
-          <p className="text-red-500 mb-2">If this text is red, Tailwind is working.</p>
+        
 
           <input
             className="border p-2 w-full mb-4 rounded"
